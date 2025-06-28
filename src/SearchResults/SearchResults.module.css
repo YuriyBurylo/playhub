@@ -1,0 +1,12 @@
+.background {
+    border-radius: 5px;
+}
+
+
+@media (min-width: 1280px) {
+    .heading {
+        margin-bottom: 6rem;
+    }
+  }
+
+

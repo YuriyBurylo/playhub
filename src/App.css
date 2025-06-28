@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+.App {
+  margin: auto;
+}
+
+.App h1 {
+  margin: 2rem;
+  text-shadow: 0px 0px 25px #061e47;
+  letter-spacing: 0.3rem;
+}
+ 
+.App main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+}
+
+@media (min-width: 1280px) {
+  .App {
+    max-width: 1800px;
+  }
+  .App main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+  }
+}
+
+.App main a {
+  display: inline-block;
+  max-width:fit-content;
+  border: 2px solid #061e47;
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+  margin: 1.5rem auto;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #061e47;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+@media (min-width: 1280px) {
+  .App main a {
+    grid-column: span 3;
+  }
+}
+
+.App a:hover {
+    box-shadow: 0px 0px 12px #8a8989fd;
+    transform: scale(1.05);
+    transition: all 0.3s ease-out;
+  }
+
+.App a:active {
+  box-shadow: 0px 0px 20px #8a8989fd;
+  transform: scale(1.1); 
+  transition: all 0.2s ease-out;
+}
+.App iframe {
+  grid-column:1/2;
+  grid-row: 2/3;
+}
+
+@media (min-width: 1280px) {
+  .App main iframe {
+    grid-column: span 3;
+  }
+}
+
+.search_bar {
+  grid-column:1/2;
+  grid-row: 3/4;
+}
+
+@media (min-width: 1280px) {
+  .search_bar {
+    grid-column: span 3;
+  }
+}
+
+.search_results {
+  grid-column:1/2;
+  grid-row: 4/5;
+}
+
+@media (min-width: 1280px) {
+  .search_results {
+    grid-column: 1/2;
+    grid-row: 4/7;
+  }
+}
+
+.playlist {
+  grid-column:1/2;
+  grid-row: 5/6;
+}
+
+@media (min-width: 1280px) {
+  .playlist {
+    grid-column: 2/3;
+    grid-row: 4/7;
+  }
+}
+
+.my_playlists {
+  grid-column:1/2;
+  grid-row: 6/7;
+}
+
+@media (min-width: 1280px) {
+  .my_playlists {
+    grid-column: 3/4;
+    grid-row: 4/7;
+  }
+}
+
+h2 {
+  margin: 2rem auto;
+}
+
+.App ul li {
+  list-style: none;
+}
+
+.App footer {
+  margin: 1.2rem 0;
+}

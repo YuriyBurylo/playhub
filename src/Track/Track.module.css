@@ -1,0 +1,35 @@
+.trackbox {
+    padding: 0.2rem;
+    background: #061e47;
+    font-size: 1rem;
+    color:rgb(244, 244, 236);
+    text-align: start;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.artist {
+    margin-bottom: 0.3rem;
+}
+.artist span {
+    font-style: italic;
+}
+
+.album {
+    color: rgb(210, 207, 207);
+}
+
+.album span {
+    font-style: italic;
+}
+
+.duration {
+    color: rgb(210, 207, 207);
+}
+
+.duration span {
+    font-style: italic;
+}

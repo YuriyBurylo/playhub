@@ -21,7 +21,7 @@ function App() {
 
   const makeUrl = () => {
       const client_id = '526c2e259cad436489e35e5edd73fa59';
-      const redirect_uri = 'http://localhost:5173';
+      const redirect_uri = 'https://play-list-hub.netlify.app';
       const scope = 'user-read-private user-read-email playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private';
       let url = 'https://accounts.spotify.com/authorize';
       url += '?response_type=token';

@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import './App.css';
 import SearchBar from './SearchBar/SearchBar';
 import SearchResults from './SearchResults/SearchResults';
-import PlayList from './PlayList/PlayList'; 
 import MyPlayLists from './MyPlayLists/MyPlayLists';
+import PlayList from './PlayList/PlayList';
+import Loading from './Loading/Loading';
+
+const Title = lazy(() => import('./Title/Title'));
 
 
 function App() {
@@ -299,15 +302,25 @@ setInterval(() => {
   return (
     <div className="App">
       <header>
-        <h1>JAMMMING</h1>
+        <Suspense fallback={<Loading />}>
+          <Title />
+        </Suspense>
       </header>
       <main> 
         <a href={makeUrl()}>CONNECT TO SPOTIFY</a>
-        <iframe id="player" title="spotify-iframe" style={{borderRadius: "1rem"}} src={playerURL} width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div className="search_bar"><SearchBar handleInput={handleInput} value={input} makeRequest={makeRequest}/></div>
-        <div className="search_results"><SearchResults data={results} addToPlayList={addToPlayListFunc} play={updateTrackURL}/></div>
-        <div className="playlist"><PlayList data={selected} removeFromPlayList={removeFromPlayListFunc} play={updateTrackURL} changeHandler={handleChange} plInput={playlistTitle} clickSaveSpotify={clickSaveSpotify} /></div>
-        <div className="my_playlists"><MyPlayLists data={playListsObject.items} changePlaylistTitle={changePlaylistTitle} rename={renamePlaylist} play={updatePlaylistURL} downloadMyPlaylists={downloadUserPlaylists}/></div>
+          <iframe id="player" title="spotify-iframe" style={{borderRadius: "1rem"}} src={playerURL} width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div className="search_bar">
+          <SearchBar handleInput={handleInput} value={input} makeRequest={makeRequest}/>
+        </div>
+        <div className="search_results">
+            <SearchResults data={results} addToPlayList={addToPlayListFunc} play={updateTrackURL}/>
+        </div>
+        <div className="playlist">
+            <PlayList data={selected} removeFromPlayList={removeFromPlayListFunc} play={updateTrackURL} changeHandler={handleChange} plInput={playlistTitle} clickSaveSpotify={clickSaveSpotify} />
+        </div>
+        <div className="my_playlists">
+            <MyPlayLists data={playListsObject.items} changePlaylistTitle={changePlaylistTitle} rename={renamePlaylist} play={updatePlaylistURL} downloadMyPlaylists={downloadUserPlaylists}/>
+        </div>
       </main>
       <footer>Copyright &copy; 2025 Jammming</footer>
     </div>

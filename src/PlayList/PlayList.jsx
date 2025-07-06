@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import TrackList from '../TrackList/TrackList';
 import styles from './PlayList.module.css';
+
 function PlayList(props) {
     const bgColor = {backgroundColor: "#104210"}; 
     return (
@@ -14,4 +15,5 @@ function PlayList(props) {
         </div>
     );
 }
+
 export default PlayList;
